@@ -15,7 +15,7 @@ export function CommentProvider({ children }) {
   const { API_URL } = useApiUrlContext();
   const { pageLeadId } = useLeadIdContext();
   const { data, loading, error, fetchData } = useFetch(
-    pageLeadId ? `${API_URL}/leads/${pageLeadId}/comments` : null
+    pageLeadId ? `${API_URL}/api/leads/${pageLeadId}/comments` : null
   );
   const { resetCommentForm } = useCommentFormContext();
 
