@@ -37,6 +37,20 @@ export function AgentProvider({ children }) {
     }
   }
 
+  async function deleteAgent(agentId) {
+    try {
+      const response = await axios.delete(`${API_URL}/api/agents/${agentId}`);
+      fetchData();
+      fireToastPopup();
+    } catch (error) {
+      if (error.response) {
+        console.error("Backend Error: ", error.response.data.error);
+      } else {
+        console.error("Network Error:", error.message);
+      }
+    }
+  }
+
   return (
     <AgentContext.Provider
       value={{
@@ -45,6 +59,7 @@ export function AgentProvider({ children }) {
         agentsError: error,
         fetchData,
         addAgent,
+        deleteAgent,
       }}
     >
       {children}

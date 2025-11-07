@@ -1,3 +1,4 @@
+import AgentList from "../components/AgentList/AgentList";
 import Container from "../components/Containers/Container";
 import Header from "../components/header/Header";
 import Heading1 from "../components/Headings/Heading1";
@@ -23,12 +24,7 @@ export default function Settings() {
             <Heading1 main="Settings" sub="Manage your CRM preferences" />
           </Container>
           <LeadList />
-          {/* <Container className="p-6 mt-6 bg-surface-secondary border border-border-default rounded-lg">
-            <h3 className="text-2xl font-semibold mb-6">General Setting</h3>
-            <p className="text-base text-text-secondary">
-              Setting configuration coming soon...
-            </p>
-          </Container> */}
+          <AgentList />
         </main>
       </Container>
     </Container>
