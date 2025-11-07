@@ -1,7 +1,9 @@
 import Container from "../components/Containers/Container";
 import Header from "../components/header/Header";
 import Heading1 from "../components/Headings/Heading1";
+import LeadList from "../components/LeadList/LeadList";
 import Sidebar from "../components/Sidebar/Sidebar";
+import ToastPopup from "../components/ToastPopup/ToastPopup";
 import useSidebarContext from "../contexts/SidebarContext";
 
 export default function Settings() {
@@ -9,6 +11,7 @@ export default function Settings() {
   return (
     <Container className="w-full max-w-[1600px] mx-auto flex relative">
       <Sidebar />
+      <ToastPopup label="deleted successfully." />
       <Container
         className={`flex-1 transition-all ease-in duration-300 max-md:ml-0 ${
           isSidebarVisible ? "ml-64" : "ml-0"
@@ -19,12 +22,13 @@ export default function Settings() {
           <Container className="flex justify-between items-center">
             <Heading1 main="Settings" sub="Manage your CRM preferences" />
           </Container>
-          <Container className="p-6 mt-6 bg-surface-secondary border border-border-default rounded-lg">
+          <LeadList />
+          {/* <Container className="p-6 mt-6 bg-surface-secondary border border-border-default rounded-lg">
             <h3 className="text-2xl font-semibold mb-6">General Setting</h3>
             <p className="text-base text-text-secondary">
               Setting configuration coming soon...
             </p>
-          </Container>
+          </Container> */}
         </main>
       </Container>
     </Container>

@@ -63,6 +63,19 @@ export function LeadProvider({ children }) {
     }
   }
 
+  async function deleteLead(leadId) {
+    try {
+      const response = await axios.delete(`${API_URL}/api/leads/${leadId}`);
+      fetchData();
+    } catch (error) {
+      if (error.response) {
+        console.error("Backend Error:", error.response.data.error);
+      } else {
+        console.error("Network Error:", error.message);
+      }
+    }
+  }
+
   useEffect(() => {
     fetchData();
   }, [filters]);
@@ -75,6 +88,7 @@ export function LeadProvider({ children }) {
         leadsError: error,
         addLead,
         updateLead,
+        deleteLead,
       }}
     >
       {children}

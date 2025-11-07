@@ -25,6 +25,7 @@ export default {
           gray: "#B2B6BC",
           white: "#ffffff",
           blue: "#2463EB",
+          red: "#EF4343",
         },
         status: {
           blue: "#DBEAFE",
